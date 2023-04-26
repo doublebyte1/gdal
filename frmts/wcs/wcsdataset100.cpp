@@ -269,19 +269,19 @@ bool WCSDataset100::ExtractGridInfo()
     /*      Fallback to nativeCRSs declaration.                             */
     /* -------------------------------------------------------------------- */
     const char *pszNativeCRSs =
-        CPLGetXMLValue(psCO, "supportedCRSs.nativeCRSs", nullptr);
+        CPLGetXMLValue(psCO, "crss.nativeCRSs", nullptr);
 
     if (pszNativeCRSs == nullptr)
         pszNativeCRSs =
-            CPLGetXMLValue(psCO, "supportedCRSs.requestResponseCRSs", nullptr);
+            CPLGetXMLValue(psCO, "crss.requestResponseCRSs", nullptr);
 
     if (pszNativeCRSs == nullptr)
         pszNativeCRSs =
-            CPLGetXMLValue(psCO, "supportedCRSs.requestCRSs", nullptr);
+            CPLGetXMLValue(psCO, "crss.requestCRSs", nullptr);
 
     if (pszNativeCRSs == nullptr)
         pszNativeCRSs =
-            CPLGetXMLValue(psCO, "supportedCRSs.responseCRSs", nullptr);
+            CPLGetXMLValue(psCO, "crss.responseCRSs", nullptr);
 
     if (pszNativeCRSs != nullptr && m_oSRS.IsEmpty())
     {

@@ -211,11 +211,11 @@ class TileMatrixSet(object):
     @staticmethod
     def parse(j: dict) -> "TileMatrixSet":
         assert "identifier" in j
-        assert "supportedCRS" in j
+        assert "crs" in j
         assert "tileMatrix" in j
         assert isinstance(j["tileMatrix"], list)
         srs = osr.SpatialReference()
-        assert srs.SetFromUserInput(str(j["supportedCRS"])) == 0
+        assert srs.SetFromUserInput(str(j["crs"])) == 0
         swapaxis = srs.EPSGTreatsAsLatLong() or srs.EPSGTreatsAsNorthingEasting()
         metersPerUnit = 1.0
         if srs.IsProjected():
@@ -226,16 +226,16 @@ class TileMatrixSet(object):
         tms.srs = srs
         tms.identifier = str(j["identifier"])
         for i, tileMatrix in enumerate(j["tileMatrix"]):
-            assert "topLeftCorner" in tileMatrix
-            assert isinstance(tileMatrix["topLeftCorner"], list)
-            topLeftCorner = tileMatrix["topLeftCorner"]
-            assert len(topLeftCorner) == 2
+            assert "pointOfOrigin" in tileMatrix
+            assert isinstance(tileMatrix["pointOfOrigin"], list)
+            pointOfOrigin = tileMatrix["pointOfOrigin"]
+            assert len(pointOfOrigin) == 2
             assert "scaleDenominator" in tileMatrix
             assert "tileWidth" in tileMatrix
             assert "tileHeight" in tileMatrix
 
-            topleft_x = topLeftCorner[0]
-            topleft_y = topLeftCorner[1]
+            topleft_x = pointOfOrigin[0]
+            topleft_y = pointOfOrigin[1]
             tileWidth = tileMatrix["tileWidth"]
             tileHeight = tileMatrix["tileHeight"]
             if tileWidth != tileHeight:

@@ -49,11 +49,11 @@
       </axisDescription>
       </RangeSet>
     </rangeSet>
-    <supportedCRSs>
+    <crss>
       <requestResponseCRSs>EPSG:4326</requestResponseCRSs>
       <requestResponseCRSs>EPSG:3067</requestResponseCRSs>
       <nativeCRSs>EPSG:3067</nativeCRSs>
-    </supportedCRSs>
+    </crss>
     <supportedFormats nativeFormat="GeoTIFF">
   <formats>GeoTIFF</formats>
   <formats>NITF</formats>

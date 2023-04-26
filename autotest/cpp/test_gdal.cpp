@@ -1890,9 +1890,9 @@ TEST_F(test_gdal, TileMatrixSet)
     // Inline JSON with minimal structure
     {
         auto poTMS = gdal::TileMatrixSet::parse(
-            "{\"type\": \"TileMatrixSetType\", \"supportedCRS\": "
+            "{\"type\": \"TileMatrixSetType\", \"crs\": "
             "\"http://www.opengis.net/def/crs/OGC/1.3/CRS84\", \"tileMatrix\": "
-            "[{ \"topLeftCorner\": [-180, 90],\"scaleDenominator\":1.0}] }");
+            "[{ \"pointOfOrigin\": [-180, 90],\"scaleDenominator\":1.0}] }");
         EXPECT_TRUE(poTMS != nullptr);
         if (poTMS)
         {
@@ -1907,9 +1907,9 @@ TEST_F(test_gdal, TileMatrixSet)
     {
         CPLPushErrorHandler(CPLQuietErrorHandler);
         EXPECT_TRUE(gdal::TileMatrixSet::parse(
-                        "{\"type\": \"TileMatrixSetType\", \"supportedCRS\": "
+                        "{\"type\": \"TileMatrixSetType\", \"crs\": "
                         "\"http://www.opengis.net/def/crs/OGC/1.3/CRS84\", "
-                        "\"tileMatrix\": [{ \"topLeftCorner\": [-180, "
+                        "\"tileMatrix\": [{ \"pointOfOrigin\": [-180, "
                         "90],\"scaleDenominator\":0.0}] }") == nullptr);
         CPLPopErrorHandler();
     }
@@ -1926,11 +1926,11 @@ TEST_F(test_gdal, TileMatrixSet)
                               "        \"crs\": "
                               "\"http://www.opengis.net/def/crs/OGC/1.X/"
                               "CRS84\","  // 1.3 modified to 1.X to test
-                                          // difference with supportedCRS
+                                          // difference with crs
                               "        \"lowerCorner\": [-180, -90],"
                               "        \"upperCorner\": [180, 90]"
                               "    },"
-                              "    \"supportedCRS\": "
+                              "    \"crs\": "
                               "\"http://www.opengis.net/def/crs/OGC/1.3/"
                               "CRS84\","
                               "    \"wellKnownScaleSet\": "
@@ -1943,7 +1943,7 @@ TEST_F(test_gdal, TileMatrixSet)
                               "            \"identifier\": \"0\","
                               "            \"scaleDenominator\": "
                               "279541132.014358,"
-                              "            \"topLeftCorner\": [-180, 90],"
+                              "            \"pointOfOrigin\": [-180, 90],"
                               "            \"tileWidth\": 256,"
                               "            \"tileHeight\": 256,"
                               "            \"matrixWidth\": 2,"
@@ -1954,7 +1954,7 @@ TEST_F(test_gdal, TileMatrixSet)
                               "            \"identifier\": \"1\","
                               "            \"scaleDenominator\": "
                               "139770566.007179,"
-                              "            \"topLeftCorner\": [-180, 90],"
+                              "            \"pointOfOrigin\": [-180, 90],"
                               "            \"tileWidth\": 256,"
                               "            \"tileHeight\": 256,"
                               "            \"matrixWidth\": 4,"
@@ -2019,11 +2019,11 @@ TEST_F(test_gdal, TileMatrixSet)
             "        \"crs\": "
             "\"http://www.opengis.net/def/crs/OGC/1.X/"
             "CRS84\","  // 1.3 modified to 1.X to test
-                        // difference with supportedCRS
+                        // difference with crs
             "        \"lowerCorner\": [-180, -90],"
             "        \"upperCorner\": [180, 90]"
             "    },"
-            "    \"supportedCRS\": "
+            "    \"crs\": "
             "\"http://www.opengis.net/def/crs/OGC/1.3/"
             "CRS84\","
             "    \"wellKnownScaleSet\": "
@@ -2036,7 +2036,7 @@ TEST_F(test_gdal, TileMatrixSet)
             "            \"identifier\": \"0\","
             "            \"scaleDenominator\": "
             "279541132.014358,"
-            "            \"topLeftCorner\": [-180, 90],"
+            "            \"pointOfOrigin\": [-180, 90],"
             "            \"tileWidth\": 256,"
             "            \"tileHeight\": 256,"
             "            \"matrixWidth\": 2,"
@@ -2046,7 +2046,7 @@ TEST_F(test_gdal, TileMatrixSet)
             "            \"type\": \"TileMatrixType\","
             "            \"identifier\": \"1\","
             "            \"scaleDenominator\": 100000000,"
-            "            \"topLeftCorner\": [-123, 90],"
+            "            \"pointOfOrigin\": [-123, 90],"
             "            \"tileWidth\": 128,"
             "            \"tileHeight\": 256,"
             "            \"matrixWidth\": 4,"
@@ -2094,7 +2094,7 @@ TEST_F(test_gdal, TileMatrixSet)
             "            180"
             "        ]"
             "    },"
-            "    \"supportedCRS\" : "
+            "    \"crs\" : "
             "\"http://www.opengis.net/def/crs/EPSG/0/4326\","
             "    \"wellKnownScaleSet\" : "
             "\"http://www.opengis.net/def/wkss/OGC/1.0/CDBGlobalGrid\","
@@ -2106,7 +2106,7 @@ TEST_F(test_gdal, TileMatrixSet)
             "            \"matrixHeight\" : 180,"
             "            \"tileWidth\" : 1,"
             "            \"tileHeight\" : 1,"
-            "            \"topLeftCorner\" : ["
+            "            \"pointOfOrigin\" : ["
             "                90,"
             "                -180"
             "            ],"

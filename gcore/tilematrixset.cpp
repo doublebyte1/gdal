@@ -220,7 +220,7 @@ std::unique_ptr<TileMatrixSet> TileMatrixSet::parse(const char *fileOrDef)
             poTMS->mBbox.mUpperCornerY = oUpperCorner[1].ToDouble(NaN);
         }
     }
-    poTMS->mCrs = oRoot.GetString("supportedCRS");
+    poTMS->mCrs = oRoot.GetString("crs");
     poTMS->mWellKnownScaleSet = oRoot.GetString("wellKnownScaleSet");
 
     OGRSpatialReference oCrs;
@@ -267,7 +267,7 @@ std::unique_ptr<TileMatrixSet> TileMatrixSet::parse(const char *fileOrDef)
             // http://docs.opengeospatial.org/is/17-083r2/17-083r2.html
             tm.mResX = tm.mScaleDenominator * 0.28e-3 / dfMetersPerUnit;
             tm.mResY = tm.mResX;
-            const auto oTopLeftCorner = oTM.GetArray("topLeftCorner");
+            const auto oTopLeftCorner = oTM.GetArray("pointOfOrigin");
             if (oTopLeftCorner.IsValid() && oTopLeftCorner.Size() == 2)
             {
                 tm.mTopLeftX = oTopLeftCorner[0].ToDouble(NaN);

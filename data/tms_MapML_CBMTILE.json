@@ -2,13 +2,13 @@
   "type": "TileMatrixSetType",
   "identifier": "CBMTILE",
   "title": "Lambert Conformal Conic-based tiled coordinate reference system for Canada.",
-  "supportedCRS": "http://www.opengis.net/def/crs/EPSG/0/3978",
+  "crs": "http://www.opengis.net/def/crs/EPSG/0/3978",
   "tileMatrix": [
     {
       "matrixHeight": 5,
       "tileHeight": 256,
       "tileWidth": 256,
-      "topLeftCorner": [
+      "pointOfOrigin": [
         -34655800,
         39310000
       ],
@@ -21,7 +21,7 @@
       "matrixHeight": 9,
       "tileHeight": 256,
       "tileWidth": 256,
-      "topLeftCorner": [
+      "pointOfOrigin": [
         -34655800,
         39310000
       ],
@@ -34,7 +34,7 @@
       "matrixHeight": 15,
       "tileHeight": 256,
       "tileWidth": 256,
-      "topLeftCorner": [
+      "pointOfOrigin": [
         -34655800,
         39310000
       ],
@@ -47,7 +47,7 @@
       "matrixHeight": 25,
       "tileHeight": 256,
       "tileWidth": 256,
-      "topLeftCorner": [
+      "pointOfOrigin": [
         -34655800,
         39310000
       ],
@@ -60,7 +60,7 @@
       "matrixHeight": 42,
       "tileHeight": 256,
       "tileWidth": 256,
-      "topLeftCorner": [
+      "pointOfOrigin": [
         -34655800,
         39310000
       ],
@@ -73,7 +73,7 @@
       "matrixHeight": 73,
       "tileHeight": 256,
       "tileWidth": 256,
-      "topLeftCorner": [
+      "pointOfOrigin": [
         -34655800,
         39310000
       ],
@@ -86,7 +86,7 @@
       "matrixHeight": 121,
       "tileHeight": 256,
       "tileWidth": 256,
-      "topLeftCorner": [
+      "pointOfOrigin": [
         -34655800,
         39310000
       ],
@@ -99,7 +99,7 @@
       "matrixHeight": 208,
       "tileHeight": 256,
       "tileWidth": 256,
-      "topLeftCorner": [
+      "pointOfOrigin": [
         -34655800,
         39310000
       ],
@@ -112,7 +112,7 @@
       "matrixHeight": 363,
       "tileHeight": 256,
       "tileWidth": 256,
-      "topLeftCorner": [
+      "pointOfOrigin": [
         -34655800,
         39310000
       ],
@@ -125,7 +125,7 @@
       "matrixHeight": 605,
       "tileHeight": 256,
       "tileWidth": 256,
-      "topLeftCorner": [
+      "pointOfOrigin": [
         -34655800,
         39310000
       ],
@@ -138,7 +138,7 @@
       "matrixHeight": 1036,
       "tileHeight": 256,
       "tileWidth": 256,
-      "topLeftCorner": [
+      "pointOfOrigin": [
         -34655800,
         39310000
       ],
@@ -151,7 +151,7 @@
       "matrixHeight": 1727,
       "tileHeight": 256,
       "tileWidth": 256,
-      "topLeftCorner": [
+      "pointOfOrigin": [
         -34655800,
         39310000
       ],
@@ -164,7 +164,7 @@
       "matrixHeight": 2900,
       "tileHeight": 256,
       "tileWidth": 256,
-      "topLeftCorner": [
+      "pointOfOrigin": [
         -34655800,
         39310000
       ],
@@ -177,7 +177,7 @@
       "matrixHeight": 5000,
       "tileHeight": 256,
       "tileWidth": 256,
-      "topLeftCorner": [
+      "pointOfOrigin": [
         -34655800,
         39310000
       ],
@@ -190,7 +190,7 @@
       "matrixHeight": 8530,
       "tileHeight": 256,
       "tileWidth": 256,
-      "topLeftCorner": [
+      "pointOfOrigin": [
         -34655800,
         39310000
       ],
@@ -203,7 +203,7 @@
       "matrixHeight": 14501,
       "tileHeight": 256,
       "tileWidth": 256,
-      "topLeftCorner": [
+      "pointOfOrigin": [
         -34655800,
         39310000
       ],
@@ -216,7 +216,7 @@
       "matrixHeight": 24167,
       "tileHeight": 256,
       "tileWidth": 256,
-      "topLeftCorner": [
+      "pointOfOrigin": [
         -34655800,
         39310000
       ],
@@ -229,7 +229,7 @@
       "matrixHeight": 41429,
       "tileHeight": 256,
       "tileWidth": 256,
-      "topLeftCorner": [
+      "pointOfOrigin": [
         -34655800,
         39310000
       ],
@@ -242,7 +242,7 @@
       "matrixHeight": 72500,
       "tileHeight": 256,
       "tileWidth": 256,
-      "topLeftCorner": [
+      "pointOfOrigin": [
         -34655800,
         39310000
       ],
@@ -255,7 +255,7 @@
       "matrixHeight": 120834,
       "tileHeight": 256,
       "tileWidth": 256,
-      "topLeftCorner": [
+      "pointOfOrigin": [
         -34655800,
         39310000
       ],
@@ -268,7 +268,7 @@
       "matrixHeight": 207143,
       "tileHeight": 256,
       "tileWidth": 256,
-      "topLeftCorner": [
+      "pointOfOrigin": [
         -34655800,
         39310000
       ],
@@ -281,7 +281,7 @@
       "matrixHeight": 362501,
       "tileHeight": 256,
       "tileWidth": 256,
-      "topLeftCorner": [
+      "pointOfOrigin": [
         -34655800,
         39310000
       ],
@@ -294,7 +294,7 @@
       "matrixHeight": 604167,
       "tileHeight": 256,
       "tileWidth": 256,
-      "topLeftCorner": [
+      "pointOfOrigin": [
         -34655800,
         39310000
       ],
@@ -307,7 +307,7 @@
       "matrixHeight": 1035715,
       "tileHeight": 256,
       "tileWidth": 256,
-      "topLeftCorner": [
+      "pointOfOrigin": [
         -34655800,
         39310000
       ],
@@ -320,7 +320,7 @@
       "matrixHeight": 1726191,
       "tileHeight": 256,
       "tileWidth": 256,
-      "topLeftCorner": [
+      "pointOfOrigin": [
         -34655800,
         39310000
       ],
@@ -333,7 +333,7 @@
       "matrixHeight": 2900001,
       "tileHeight": 256,
       "tileWidth": 256,
-      "topLeftCorner": [
+      "pointOfOrigin": [
         -34655800,
         39310000
       ],

@@ -71,7 +71,7 @@
         </axisDescription>
       </RangeSet>
     </rangeSet>
-    <supportedCRSs>
+    <crss>
       <requestResponseCRSs>EPSG:4326</requestResponseCRSs>
       <requestResponseCRSs>EPSG:3031</requestResponseCRSs>
       <requestResponseCRSs>EPSG:3034</requestResponseCRSs>
@@ -79,7 +79,7 @@
       <requestResponseCRSs>EPSG:3857</requestResponseCRSs>
       <requestResponseCRSs>EPSG:4258</requestResponseCRSs>
       <nativeCRSs>EPSG:4326</nativeCRSs>
-    </supportedCRSs>
+    </crss>
     <supportedFormats>
       <formats>GTiff</formats>
     </supportedFormats>

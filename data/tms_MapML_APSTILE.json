@@ -2,13 +2,13 @@
   "type": "TileMatrixSetType",
   "identifier": "APSTILE",
   "title": "Alaska Polar Stereographic-based tiled coordinate reference system for the Arctic region.",
-  "supportedCRS": "http://www.opengis.net/def/crs/EPSG/0/5936",
+  "crs": "http://www.opengis.net/def/crs/EPSG/0/5936",
   "tileMatrix": [
     {
       "matrixHeight": 1,
       "tileHeight": 256,
       "tileWidth": 256,
-      "topLeftCorner": [
+      "pointOfOrigin": [
         -28567784.109255,
         32567784.109255
       ],
@@ -21,7 +21,7 @@
       "matrixHeight": 2,
       "tileHeight": 256,
       "tileWidth": 256,
-      "topLeftCorner": [
+      "pointOfOrigin": [
         -28567784.109255,
         32567784.109255
       ],
@@ -34,7 +34,7 @@
       "matrixHeight": 4,
       "tileHeight": 256,
       "tileWidth": 256,
-      "topLeftCorner": [
+      "pointOfOrigin": [
         -28567784.109255,
         32567784.109255
       ],
@@ -47,7 +47,7 @@
       "matrixHeight": 8,
       "tileHeight": 256,
       "tileWidth": 256,
-      "topLeftCorner": [
+      "pointOfOrigin": [
         -28567784.109255,
         32567784.109255
       ],
@@ -60,7 +60,7 @@
       "matrixHeight": 16,
       "tileHeight": 256,
       "tileWidth": 256,
-      "topLeftCorner": [
+      "pointOfOrigin": [
         -28567784.109255,
         32567784.109255
       ],
@@ -73,7 +73,7 @@
       "matrixHeight": 32,
       "tileHeight": 256,
       "tileWidth": 256,
-      "topLeftCorner": [
+      "pointOfOrigin": [
         -28567784.109255,
         32567784.109255
       ],
@@ -86,7 +86,7 @@
       "matrixHeight": 64,
       "tileHeight": 256,
       "tileWidth": 256,
-      "topLeftCorner": [
+      "pointOfOrigin": [
         -28567784.109255,
         32567784.109255
       ],
@@ -99,7 +99,7 @@
       "matrixHeight": 128,
       "tileHeight": 256,
       "tileWidth": 256,
-      "topLeftCorner": [
+      "pointOfOrigin": [
         -28567784.109255,
         32567784.109255
       ],
@@ -112,7 +112,7 @@
       "matrixHeight": 256,
       "tileHeight": 256,
       "tileWidth": 256,
-      "topLeftCorner": [
+      "pointOfOrigin": [
         -28567784.109255,
         32567784.109255
       ],
@@ -125,7 +125,7 @@
       "matrixHeight": 512,
       "tileHeight": 256,
       "tileWidth": 256,
-      "topLeftCorner": [
+      "pointOfOrigin": [
         -28567784.109255,
         32567784.109255
       ],
@@ -138,7 +138,7 @@
       "matrixHeight": 1024,
       "tileHeight": 256,
       "tileWidth": 256,
-      "topLeftCorner": [
+      "pointOfOrigin": [
         -28567784.109255,
         32567784.109255
       ],
@@ -151,7 +151,7 @@
       "matrixHeight": 2048,
       "tileHeight": 256,
       "tileWidth": 256,
-      "topLeftCorner": [
+      "pointOfOrigin": [
         -28567784.109255,
         32567784.109255
       ],
@@ -164,7 +164,7 @@
       "matrixHeight": 4096,
       "tileHeight": 256,
       "tileWidth": 256,
-      "topLeftCorner": [
+      "pointOfOrigin": [
         -28567784.109255,
         32567784.109255
       ],
@@ -177,7 +177,7 @@
       "matrixHeight": 8192,
       "tileHeight": 256,
       "tileWidth": 256,
-      "topLeftCorner": [
+      "pointOfOrigin": [
         -28567784.109255,
         32567784.109255
       ],
@@ -190,7 +190,7 @@
       "matrixHeight": 16384,
       "tileHeight": 256,
       "tileWidth": 256,
-      "topLeftCorner": [
+      "pointOfOrigin": [
         -28567784.109255,
         32567784.109255
       ],
@@ -203,7 +203,7 @@
       "matrixHeight": 32768,
       "tileHeight": 256,
       "tileWidth": 256,
-      "topLeftCorner": [
+      "pointOfOrigin": [
         -28567784.109255,
         32567784.109255
       ],
@@ -216,7 +216,7 @@
       "matrixHeight": 65536,
       "tileHeight": 256,
       "tileWidth": 256,
-      "topLeftCorner": [
+      "pointOfOrigin": [
         -28567784.109255,
         32567784.109255
       ],
@@ -229,7 +229,7 @@
       "matrixHeight": 131072,
       "tileHeight": 256,
       "tileWidth": 256,
-      "topLeftCorner": [
+      "pointOfOrigin": [
         -28567784.109255,
         32567784.109255
       ],
@@ -242,7 +242,7 @@
       "matrixHeight": 262144,
       "tileHeight": 256,
       "tileWidth": 256,
-      "topLeftCorner": [
+      "pointOfOrigin": [
         -28567784.109255,
         32567784.109255
       ],
@@ -255,7 +255,7 @@
       "matrixHeight": 524288,
       "tileHeight": 256,
       "tileWidth": 256,
-      "topLeftCorner": [
+      "pointOfOrigin": [
         -28567784.109255,
         32567784.109255
       ],
