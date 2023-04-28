@@ -40,6 +40,9 @@ static const char *JSON_PATH_DELIMITER = "/";
 
 static const char *INVALID_OBJ_KEY = "__INVALID_OBJ_KEY__";
 
+#include <iostream>
+using namespace std;
+
 //------------------------------------------------------------------------------
 // JSONDocument
 //------------------------------------------------------------------------------
@@ -221,6 +224,7 @@ bool CPLJSONDocument::LoadMemory(const GByte *pabyData, int nLength)
 
     if (m_poRootJsonObject)
         json_object_put(TO_JSONOBJ(m_poRootJsonObject));
+
 
     if (nLength == 4 &&
         memcmp(reinterpret_cast<const char *>(pabyData), "true", nLength) == 0)

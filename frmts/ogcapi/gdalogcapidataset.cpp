@@ -42,6 +42,10 @@
 #include <memory>
 #include <vector>
 
+#include <iostream>
+using namespace std;
+
+
 // g++ -Wall -Wextra -std=c++11 -Wall -g -fPIC
 // frmts/ogcapi/gdalogcapidataset.cpp -shared -o gdal_OGCAPI.so -Iport -Igcore
 // -Iogr -Iogr/ogrsf_frmts -Iogr/ogrsf_frmts/gml -Iapps -L. -lgdal
@@ -1487,6 +1491,12 @@ bool OGCAPIDataset::InitWithTilesAPI(GDALOpenInfo *poOpenInfo,
     for (const auto &oTileset : oTilesets)
     {
         const auto oTileMatrixSetURI = oTileset.GetString("tileMatrixSetURI");
+
+            cout <<  "oTileMatrixSetURI ======================\n";
+            cout <<  oTileMatrixSetURI;
+            cout <<  "======================\n";
+
+
         const auto oLinks = oTileset.GetArray("links");
         if (bIsMap)
         {
@@ -1535,6 +1545,10 @@ bool OGCAPIDataset::InitWithTilesAPI(GDALOpenInfo *poOpenInfo,
 
         if (oTileMatrixSetURI.find("WorldCRS84Quad") != std::string::npos)
         {
+            cout <<  "osCandidateTilesetURL ======================\n";
+            cout <<  osCandidateTilesetURL;
+            cout <<  "======================\n";
+
             osTilesetURL = osCandidateTilesetURL;
         }
         else if (osTilesetURL.empty())
@@ -1547,6 +1561,10 @@ bool OGCAPIDataset::InitWithTilesAPI(GDALOpenInfo *poOpenInfo,
         CPLError(CE_Failure, CPLE_AppDefined, "Cannot find tilematrixset");
         return false;
     }
+
+    cout <<  "osTilesetURL ======================\n";
+    cout <<  osTilesetURL;
+    cout <<  "======================\n";
 
     // Download and parse selected tileset definition
     if (!DownloadJSon(osTilesetURL.c_str(), oDoc))
@@ -1667,10 +1685,24 @@ bool OGCAPIDataset::InitWithTilesAPI(GDALOpenInfo *poOpenInfo,
     }
 
     // Download and parse tile matrix set definition
+
+    cout <<  "osTilingSchemeURL ======================\n";
+    cout <<  osTilingSchemeURL;
+    cout <<  "======================\n";
+
+
     if (!DownloadJSon(osTilingSchemeURL.c_str(), oDoc, nullptr,
                       MEDIA_TYPE_JSON))
         return false;
-    auto tms = gdal::TileMatrixSet::parse(oDoc.SaveAsString().c_str());
+
+    const auto uri =
+        oDoc.GetRoot().GetString("uri");
+
+    cout <<  "GOING TO PARSE======================\n";
+    // cout <<  oDoc.SaveAsString();
+
+    auto tms = gdal::TileMatrixSet::parse(
+        uri.c_str()/*oDoc.SaveAsString().c_str()*/);
     if (tms == nullptr)
         return false;
 

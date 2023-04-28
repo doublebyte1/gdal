@@ -35,6 +35,9 @@
 
 #include "tilematrixset.hpp"
 
+#include <iostream>
+using namespace std;
+
 //! @cond Doxygen_Suppress
 
 namespace gdal
@@ -76,8 +79,11 @@ std::unique_ptr<TileMatrixSet> TileMatrixSet::parse(const char *fileOrDef)
     CPLJSONDocument oDoc;
     std::unique_ptr<TileMatrixSet> poTMS(new TileMatrixSet());
 
+        cout <<  "fileOrDef ======================\n";
+        cout <<  fileOrDef;
+
     constexpr double HALF_CIRCUMFERENCE = 6378137 * M_PI;
-    if (EQUAL(fileOrDef, "GoogleMapsCompatible"))
+    if (EQUAL(fileOrDef, "http://www.opengis.net/def/tilematrixset/OGC/1.0/GoogleCRS84Quad"))
     {
         /* See http://portal.opengeospatial.org/files/?artifact_id=35326
          * (WMTS 1.0), Annex E.4 */
@@ -109,7 +115,7 @@ std::unique_ptr<TileMatrixSet> TileMatrixSet::parse(const char *fileOrDef)
         return poTMS;
     }
 
-    if (EQUAL(fileOrDef, "InspireCRS84Quad"))
+    if (EQUAL(fileOrDef, "http://www.opengis.net/def/tilematrixset/OGC/1.0/WorldCRS84Quad"))
     {
         /* See InspireCRS84Quad at
          * http://inspire.ec.europa.eu/documents/Network_Services/TechnicalGuidance_ViewServices_v3.0.pdf
@@ -147,6 +153,7 @@ std::unique_ptr<TileMatrixSet> TileMatrixSet::parse(const char *fileOrDef)
         return poTMS;
     }
 
+
     bool loadOk = false;
     if ((strstr(fileOrDef, "\"type\"") != nullptr &&
          strstr(fileOrDef, "\"TileMatrixSetType\"") != nullptr) ||
@@ -155,11 +162,16 @@ std::unique_ptr<TileMatrixSet> TileMatrixSet::parse(const char *fileOrDef)
          (strstr(fileOrDef, "\"tileMatrix\"") != nullptr ||
           strstr(fileOrDef, "\"tileMatrices\"") != nullptr)))
     {
+        cout <<  "1 ======================\n";
+
         loadOk = oDoc.LoadMemory(fileOrDef);
     }
     else if (STARTS_WITH_CI(fileOrDef, "http://") ||
              STARTS_WITH_CI(fileOrDef, "https://"))
     {
+
+        cout <<  "2 ======================\n";
+
         const char *const apszOptions[] = {"MAX_FILE_SIZE=1000000", nullptr};
         loadOk = oDoc.LoadUrl(fileOrDef, apszOptions);
     }
@@ -172,8 +184,10 @@ std::unique_ptr<TileMatrixSet> TileMatrixSet::parse(const char *fileOrDef)
         }
         else
         {
+            cout <<  "THE PROBLEM IS IN THIS CODE BLOCK  ======================\n";
             const char *pszFilename = CPLFindFile(
                 "gdal", (std::string("tms_") + fileOrDef + ".json").c_str());
+
             if (pszFilename)
             {
                 loadOk = oDoc.Load(pszFilename);
